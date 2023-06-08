@@ -14,7 +14,7 @@ public class Controller {
 
     @GetMapping("/all")
     @ResponseStatus(HttpStatus.OK)
-    public Repository[] getFoos(@RequestParam String username) {
+    public Repository[] getAllRepoOwnerLogin(@RequestParam String username) {
         return service.allRepo(username);
     }
 

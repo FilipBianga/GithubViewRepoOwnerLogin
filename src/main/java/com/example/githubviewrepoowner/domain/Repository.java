@@ -1,10 +1,6 @@
 package com.example.githubviewrepoowner.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
+import lombok.*;
 
 @Data
 @Builder
@@ -13,7 +9,10 @@ import lombok.NoArgsConstructor;
 public class Repository {
 
     private long id;
+    private OwnerLogin owner;
     private String name;
-    private String description;
-    private String fork;
+
+    private Boolean fork;
+
+    private String branches_url;
 }
