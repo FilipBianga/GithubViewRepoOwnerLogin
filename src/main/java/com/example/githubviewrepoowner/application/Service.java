@@ -1,8 +1,6 @@
 package com.example.githubviewrepoowner.application;
 
-import com.example.githubviewrepoowner.domain.Repository;
-
+import com.example.githubviewrepoowner.domain.GithubRepository;
 public interface Service {
-
-    Repository[] allRepo(String username);
+    GithubRepository[] findAllGithubRepositoryByOwnerLogin(String  login);
 }
