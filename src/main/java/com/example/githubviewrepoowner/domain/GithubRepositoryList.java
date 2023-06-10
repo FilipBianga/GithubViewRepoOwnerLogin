@@ -1,12 +1,6 @@
 package com.example.githubviewrepoowner.domain;
 
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import java.util.List;
 
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class GithubRepositoryList {
-    private GithubRepository[] repos;
+public record GithubRepositoryList(List<GithubRepository> githubRepositoryList) {
 }

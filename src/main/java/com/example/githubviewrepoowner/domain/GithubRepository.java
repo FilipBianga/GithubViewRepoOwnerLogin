@@ -1,16 +1,4 @@
 package com.example.githubviewrepoowner.domain;
 
-import lombok.Data;
-import lombok.AllArgsConstructor;
-import lombok.NoArgsConstructor;
-
-@Data
-@AllArgsConstructor
-@NoArgsConstructor
-public class GithubRepository {
-
-    private Login owner;
-    private String name;
-    private Boolean fork;
-    private String branches_url;
+public record GithubRepository(GithubLogin owner, String name, Boolean fork, String branches_url) {
 }
