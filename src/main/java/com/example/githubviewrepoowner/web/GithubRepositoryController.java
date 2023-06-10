@@ -1,6 +1,6 @@
 package com.example.githubviewrepoowner.web;
 
-import com.example.githubviewrepoowner.application.Service;
+import com.example.githubviewrepoowner.application.GithubRepositoryService;
 import com.example.githubviewrepoowner.domain.GithubRepository;
 import com.example.githubviewrepoowner.exception.ApiError;
 import com.example.githubviewrepoowner.exception.ResponseEntityBuilder;
@@ -14,15 +14,17 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/repos")
-class Controller {
+class GithubRepositoryController {
     @Autowired
-    private Service service;
+    private GithubRepositoryService service;
 
 
     @RequestMapping(value = "/all", method = RequestMethod.GET, headers = {"Accept=application/json"})
-    public GithubRepository[] getAllRepoOwnerLogin(@RequestParam String login) {
+    public List<GithubRepository> getAllRepoOwnerLogin(@RequestParam String login) {
         return service.findAllGithubRepositoryByOwnerLogin(login);
     }
 
